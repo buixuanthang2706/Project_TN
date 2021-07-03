@@ -10,6 +10,7 @@ use App\Motelroom;
 use App\Profileusers;
 use App\Connect;
 use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class UserController extends Controller
@@ -87,6 +88,20 @@ class UserController extends Controller
             'mypost'=> $mypost,
             'profileusers'=>$profileusers,
             'connect'=>$connect
+         ]);
+      }
+      public function getprofileungvien($id){
+         $user = DB::table('users')->where('id',$id)->first();
+         $categories = Categories::all();
+         $profileusers = Profileusers::where('user_id',$id)->first();
+         $connect = Connect::all()->first();
+        
+         // dd($user);
+         return view('home.profile-ungvien',[
+            'categories'=>$categories,
+            'profileusers'=>$profileusers,
+            'user' =>$user,
+            'connect' => $connect
          ]);
       }
 

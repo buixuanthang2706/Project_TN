@@ -154,9 +154,9 @@ function time_elapsed_string($datetime, $full = false) {
 													<span class="label label-danger">Từ chối kết nối</span>
 												@endif</td>
 												<td>
-													<a href="user/{{ $con->users->id }}"><i class="fas fa-eye"></i> Xem ứng viên</a>
-													<a href="user/profile1/{{$con->id}}" style="color: blue"><i class="fas fa-trash-alt"></i> Kết Nối</a>
-													<a href="user/profile2/{{ $con->id }}" style="color:red"><i class="fas fa-trash-alt"></i> Từ chối</a>
+													<a href="user/ungvien/{{ $con->users->id }}"><i class="fas fa-eye"></i> Xem ứng viên</a>
+													<a href="user/profile1/{{$con->id}}" style="color: blue"><i class="fas fa-check"></i> Kết Nối</a>
+													<a href="user/profile2/{{ $con->id }}" style="color:red"><i class="fas fa-times"></i> Từ chối</a>
 												</td>
 											</tr>
 											@endforeach
@@ -168,7 +168,7 @@ function time_elapsed_string($datetime, $full = false) {
 						 	 </div>
 							<!-- /.Hồ sơ -->
 						 	 <div class="tab-pane" id="profile">
-								
+								@if($profileusers->skills != '' )
 								<div id="km-detail">
 									<div class="fs-dtslt" style="font-size: 20px;">Hồ Sơ Cá Nhân</div>
 									<div style="padding: 5px;font-size: 18px;">
@@ -254,6 +254,77 @@ function time_elapsed_string($datetime, $full = false) {
 								<div style="text-align: center;font-size: 25px;">
 								<a class="btn-dangtin" href="user/profile/edit" style="border-radius: 15px;background-color: #003352!important;"><i class="fas fa-edit" style="color: #fff"> Sửa hồ sơ cá nhân </i> </a>							
 							    </div>
+								@else
+								<div id="km-detail">
+									<div class="fs-dtslt" style="font-size: 20px;">Hồ Sơ Cá Nhân</div>
+									<div style="padding: 5px;font-size: 18px;">
+										
+										<div class="card-body">
+										
+											<strong><i class="fa fa-user-circle"></i> Họ và Tên: </strong>
+							
+											<span class="text-muted">
+											
+											</span>
+							
+											<hr>
+											<strong><i class="fa fa-birthday-cake"></i> Ngày sinh: </strong>
+							
+											<span class="text-muted">
+											
+											</span>
+							
+											<hr>
+											<strong><i class="fa fa-user"></i> Giới tính: </strong>
+											<span class="text-muted">
+											
+											</span>
+							
+											<hr>
+											<strong><i class="fa fa-home"></i> Địa chỉ: </strong>
+							
+											<span class="text-muted">
+											
+											</span>
+							
+											<hr>
+											<strong><i class="fas fa-book mr-1"></i> Trình độ học vấn:</strong>
+							
+											<span class="text-muted">
+												
+											</span>
+							
+											<hr>
+							
+											<strong><i class="fa fa-align-justify"></i> Chuyên ngành: </strong>
+							
+											<span class="text-muted"></span>
+							
+											<hr>
+											
+											
+											<strong><i class="fas fa-pencil-alt mr-1"></i> Kỹ Năng:</strong>
+							
+											<span class="text-muted">
+												
+											</span>
+											<hr>
+											
+											<strong><i class="fas fa-pencil-alt mr-1"></i> Sở thích:</strong>
+												<span class="text-muted">
+												
+											</span>
+							
+											<hr>
+																										
+										  </div>
+										 
+									</div>
+								</div>	
+								<div style="text-align: center;font-size: 25px;">
+								<a class="btn-dangtin" href="user/profile/edit" style="border-radius: 15px;background-color: #003352!important;"><i class="fas fa-edit" style="color: #fff"> Sửa hồ sơ cá nhân </i> </a>							
+							    </div>
+								@endif
 							</div>
 							<!-- /.chờ kết nối -->
 							<div class="tab-pane" id="myjob">

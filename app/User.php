@@ -18,7 +18,9 @@ class User extends Authenticatable
     public function motelroom(){
         return $this->hasMany('App\Motelroom','user_id','id');
     }
-
+    public function getprofile(){
+        return $this->belongsTo('App\Profileuser','user_id','id');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

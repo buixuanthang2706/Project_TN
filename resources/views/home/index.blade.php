@@ -160,7 +160,7 @@ function time_elapsed_string($datetime, $full = false) {
 								</div>
 							</div>
 							<div class="container">
-								<h3 class="title-comm"><span class="title-holder">CÔNG VIỆC TẠI HÀ NỘI</span></h3>
+								<h3 class="title-comm"><span class="title-holder">DANH SÁCH CÔNG VIỆC</span></h3>
 								<div class="row">
 									<div class="col-md-8">
 										@foreach($listmotelroom as $job)

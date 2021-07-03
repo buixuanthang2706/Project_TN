@@ -42,7 +42,7 @@
 									
 									<th>Tiêu đề</th>
 									<th>Danh mục</th>
-									<th>Giá phòng</th>
+									<th>Mức lương</th>
 									<th>Trạng thái</th>
 									<th class="text-center">Actions</th>
 								</tr>

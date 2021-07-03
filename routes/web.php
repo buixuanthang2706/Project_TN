@@ -76,10 +76,11 @@ Route::group(['prefix'=>'user'], function () {
     Route::get('dangtin','UserController@get_dangtin')->middleware('dangtinmiddleware');
     Route::post('dangtin','UserController@post_dangtin')->name('user.dangtin')->middleware('dangtinmiddleware');
 
+    Route::get('ungvien/{id}','UserController@getprofileungvien')->name('user.profileungvien')->middleware('dangtinmiddleware');
     Route::get('profile','UserController@getprofile')->name('user.profile')->middleware('dangtinmiddleware');
     Route::get('profile/edit','UserController@getEditprofile')->middleware('dangtinmiddleware');
     Route::post('profile/edit','UserController@postEditprofile')->name('user.edit')->middleware('dangtinmiddleware');
-
+    Route::get('profile/edit','UserController@getEditprofile')->middleware('dangtinmiddleware');
     // Route::match(['put', 'patch'], '/profile1/{id}','UserController@postConnects');
     Route::get('profile1/{id}','UserController@postConnect')->middleware('dangtinmiddleware');
     Route::get('profile2/{id}','UserController@tuchoiConnect')->middleware('dangtinmiddleware');
